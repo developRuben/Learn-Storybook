@@ -5,12 +5,12 @@ export default { component: Task, title: "Task" };
 
 const Template = (tasks: TaskType) => <Task {...tasks} />;
 
-const taskDefault: TaskType = {
+export const taskDefault: TaskType = {
   task: { id: "1", state: "TASK_INBOX", title: "TEST TASK" },
 };
 export const Default = () => <Task {...taskDefault} />;
 
-const taskPinned: TaskType = {
+export const taskPinned: TaskType = {
   ...taskDefault,
   task: {
     ...taskDefault.task,
@@ -19,7 +19,7 @@ const taskPinned: TaskType = {
 };
 export const Pinned = () => <Task {...taskPinned} />;
 
-const taskArchived: TaskType = {
+export const taskArchived: TaskType = {
   ...taskDefault,
   task: {
     ...taskDefault.task,
